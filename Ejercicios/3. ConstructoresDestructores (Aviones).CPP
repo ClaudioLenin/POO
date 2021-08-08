@@ -1,7 +1,10 @@
-#include <iostream.h>
+#include<iostream>
 #include <conio.h>
-#include <string.h>
-#include <stdio.h>
+#include<string.h>
+#include<stdio.h>
+
+
+using namespace std;
 
 class cAvion
 {
@@ -36,6 +39,7 @@ cAvion::cAvion()
     strcpy(marca,"");
     tipo=h=h1=0;
 }
+//SETTERS & GETTERS
 char *cAvion::getCodigo()
 {
     return(codigo);
@@ -48,8 +52,6 @@ int cAvion::getTipo()
 {
     return(tipo);
 }
-
-
 void cAvion::setHV(int newHV)
 {
     h=newHV;
@@ -66,6 +68,7 @@ int cAvion::getHR()
 {
     return(h1);
 }
+//LN
 void cAvion::leer()
 {
     cout<<"\nIngrese modelo: ";gets(modelo);
@@ -374,7 +377,7 @@ cAerop::~cAerop()
         delete(vAD[i]);
     nd=0;
 }
-void main(){
+int main(){
    cAerop *obj;
    obj = new cAerop;
    obj->leer();
@@ -386,4 +389,6 @@ void main(){
    cout<<"\n\n\t\t\tELIMINAR AVION DISPONIBLE\n";
    obj->eliminarAvion();
    getch();
+   
+   return 0;
 }
